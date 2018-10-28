@@ -9,18 +9,17 @@ import java.util.List;
 
 public class Content extends SaveFile  {
     //Локатор поиска по имени, всех товар на странице.
-    @FindBy(xpath = "//div[@class='g-i-tile-i-box-desc']//div[@class='g-i-tile-i-title clearfix']/a")
-        private List<WebElement> nameProduct;
-    @FindBy(xpath = "//div[@name='goods_list']//div[@class='g-price-uah']")
-        private List<WebElement> priceProduct;
+    @FindAll({
+            @FindBy(xpath = "//div[@class='g-i-tile-i-box-desc']//div[@class='g-i-tile-i-title clearfix']/a"),
+            @FindBy(xpath = "//div[@name='goods_list']//div[@class='g-price-uah']")}
+            ) private List<WebElement> nameProduct;
 
 
-    //Локаторы товар с пометкой Топ продаж.
+            //Локаторы товар с пометкой Топ продаж.
     @FindAll({
             @FindBy(xpath = "//i[@class='g-tag g-tag-icon-middle-popularity sprite']/../../../..//div[@class='g-i-tile-i-title clearfix']"),
             @FindBy(xpath = "//i[@class='g-tag g-tag-icon-middle-popularity sprite']/../../../..//div[@class='g-i-tile-i-title clearfix']/../../div[@class='g-i-tile-i-box-desc']//div[@class='g-price-uah']")
-    })
-        private List<WebElement> topsales;
+    }) private List<WebElement> topsales;
 
     //Локаторы минимальной и максимальной цены, для фильтра.
     @FindBy(xpath = "//div[@class='filter-parametrs-i slider']//input[@id='price[min]']")
@@ -31,14 +30,15 @@ public class Content extends SaveFile  {
         private WebElement button;
 
 
-    public void NameProduct ()
+    public void SaveNameProductOnAllPages ()
     {
+
         SaveInfoMethod(nameProduct, "NameProduct.txt");
     }
 
-    public void TopSales ()
+    public void SaveProductTopSale ()
     {
-        // SaveInfoMethod(topsales, "TopSale.txt");
+         SaveInfoMethod(topsales, "TopSale.txt");
     }
 
     public void SetMinMaxPrice(int min, int max){
@@ -49,5 +49,11 @@ public class Content extends SaveFile  {
         priceMax.sendKeys(Keys.DELETE);
         priceMax.sendKeys(String.valueOf(max));
         button.click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

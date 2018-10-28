@@ -13,6 +13,12 @@ public class main {
 
     public static void main(String[] args) throws IOException {
 
+        /*
+        Не реализовано:
+        Отправка письма
+        Запись в excel
+         */
+
         System.setProperty("webdriver.chrome.driver", "D:\\QA_Automation\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -28,11 +34,14 @@ public class main {
         goTo.Telephone();
         goTo.Smartphone();
 
-        //setPrice.SetMinMaxPrice(3000, 6000);
-        //saveFile.NameProduct();
-        //saveFile.TopSales();
+        show.ShowProductinPage(3);
+        saveFile.SaveProductTopSale();
+
+
+        setPrice.SetMinMaxPrice(3000, 6000);
+        show.ShowProductinPage(5);
+        saveFile.SaveNameProductOnAllPages();
 
         driver.close();
     }
-
 }
