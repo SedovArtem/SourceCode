@@ -9,7 +9,7 @@ public class ContentClass extends SaveFile  {
     @FindBy(xpath = "//div[@class='g-i-tile-i-box-desc']//div[@class='g-i-tile-i-title clearfix']/a")
     private List<WebElement> nameFile;
 
-    public void SaveInfo ()
+    public void SaveNameProduct ()
     {
         SaveInfoMethod(nameFile, "ProductName.txt");
     }

@@ -4,13 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GoToPage {
-    @FindBy(linkText = "Смартфоны, ТВ и электроника")
+    @FindBy(xpath = "//div[@name='fat-menu']/ul/li[2]/a")
     private WebElement ElectronicLink;
 
-    @FindBy(linkText = "Смартфоны")
+    @FindBy(xpath = "//li[@param='63304'][1]/div/a[1]")
     private WebElement smartphone;
 
-    @FindBy(linkText = "Телефоны")
+    @FindBy(xpath = "//ul[@class='m-cat-l']/li[1]//a")
     private WebElement telephone;
 
     public GoToPage SmartphoneTvAndElectronics (){

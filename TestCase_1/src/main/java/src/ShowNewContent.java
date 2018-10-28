@@ -1,22 +1,25 @@
 package src;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 
 public class ShowNewContent {
 
-    private WebDriver driver;
+    @FindBy(xpath = "//div[@class='g-i-tile g-i-tile-catalog preloader-trigger']/a")
+    private WebElement showProducts;
 
-    @FindBy(xpath = "//nav[@id='navigation_block']/ul/li")
-    private List<WebElement> showProducts;
+    public void ShowProductinPage (int page) {
+        int i = 1;
 
-    public void showMore () {
+        for (; i < page; i++) {
+            showProducts.click();
 
-        for (WebElement ss : showProducts) {
-            ss.click();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
