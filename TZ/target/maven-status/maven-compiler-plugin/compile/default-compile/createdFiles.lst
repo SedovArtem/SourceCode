@@ -1,0 +1,12 @@
+Rozetka\Pages\TovaryDlyaDoma\TovaryDlyaDoma.class
+Rozetka\Pages\TovaryDlyaDoma\Pages\BytovayaHimiya.class
+Rozetka\Pages\TelefonyTViEhlektronika\TelefonyTViEhlektronika.class
+Settings\SaveToExcel.class
+Rozetka\HomePage.class
+Settings\SaveToBD.class
+Rozetka\Pages\TovaryDlyaDoma\Pages\StiralnyeSredstva.class
+Settings\WebDriverSetting.class
+Rozetka\Pages\TelefonyTViEhlektronika\Pages\MobilePhones.class
+Rozetka\Pages\TelefonyTViEhlektronika\Pages\Telefony.class
+Rozetka\Pages\TovaryDlyaDoma\Pages\SredstvaDlyaStirki.class
+Settings\SaveToTXT.class
